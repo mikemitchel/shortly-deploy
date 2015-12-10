@@ -107,8 +107,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'concat',
     'uglify',
-    'jshint',
-    'mochaTest'
+    'jshint'
   ]);
 
   grunt.registerTask('upload', function(n) {
