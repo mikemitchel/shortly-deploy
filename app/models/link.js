@@ -1,6 +1,24 @@
 var db = require('../config');
 var crypto = require('crypto');
 
+var mongo = require('mongodb');
+var db = require('mongoose');
+
+var Schema = db.Schema;
+
+var urlSchema = new Schema ({
+  url: String,
+  base_url: String,
+  code: String,
+  title: String,
+  visits: Number,
+  timestamp: {type: Date, default: Date.now }
+
+});
+
+var url = db.model('Url', urlSchema);
+
+
 var Link = db.Model.extend({
   tableName: 'urls',
   hasTimestamps: true,
